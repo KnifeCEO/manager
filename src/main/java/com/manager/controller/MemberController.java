@@ -140,6 +140,17 @@ public class MemberController {
 	return "redirect:/userManage/regestList";
 		
 	}
+
+	//계정 요청 자세히 보기 > 목록에서 삭제
+	@RequestMapping(value="/userManage/memberInfoRegestRM",method=RequestMethod.POST)
+	public String postmemberInfoRegestRM(MemberVO member,
+			@RequestParam("userid") String userid ) {
+	
+
+	service.memberInfoReadyDelete(userid);
+	return "redirect:/userManage/regestList";
+		
+	}
 	
 
 	//사용자 등록 시 아이디 중복 확인

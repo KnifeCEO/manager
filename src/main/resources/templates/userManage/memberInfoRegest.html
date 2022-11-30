@@ -42,7 +42,7 @@ h1 { font-family: "HY견고딕" }
   height:25px;
   background: none;
 }
-.btn_modify  {
+.btn_modify, .btn_remove  {
   position:relative;
   left:20%;
   transform: translateX(-50%);
@@ -106,6 +106,16 @@ $(document).ready(function(){
 						
 		});
 });
+
+$(document).ready(function(){
+	
+  $("#btn_remove").click(function(){
+			
+			
+			$("#registerForm").attr("action","/userManage/memberInfoRegestRM").submit();
+						
+		});
+});
 	
 	
 	
@@ -139,7 +149,8 @@ $(document).ready(function(){
       <input type="text" id="email" name="email" class="email" th:value="'Email : ' + ${list.email}" disabled>
 		  <input type="text" id="regdate" name="regdate" class="regdate" th:value="'계정 등록 날짜 : ' + ${list.regdate}" disabled>
       <input type="button" id="btn_modify" class="btn_modify" value="사용자 등록">
-      <input type="button" id="btn_cancel" class="btn_cancel" value="취소" onclick="history.back()">
+      <input type="button" id="btn_remove" class="btn_remove" value="목록에서 삭제">
+      <input type="button" id="btn_cancel" class="btn_cancel" value="뒤로가기" onclick="history.back()">
 
   </div>
 </div>
